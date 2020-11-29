@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "standard"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "indent": ["error", 4]
+    },
+	"settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "alias": {
+                    "_assets": "./src/assets",
+                    "_components": "./src/components",
+                    "_atoms": "./src/components/atoms",
+                    "_molecules": "./src/components/molecules",
+                    "_organisms": "./src/components/organisms",
+                    "_pages": "./src/pages",
+                    "_styles": "./src/styles",
+                    "_utils": "./src/utils"
+                }
+            }
+        }
+    }
+}
