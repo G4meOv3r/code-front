@@ -1,0 +1,16 @@
+.text {
+    animation: text-initial 1s;
+    color: var(--global-color);
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+@keyframes text-initial {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

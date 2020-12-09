@@ -1,0 +1,9 @@
+.logo-large {
+    color: var(--global-logo-color);
+    display: flex;
+    justify-content: center;
+    font-Size: 55px;
+    font-weight: 800;
+    letter-spacing: 10px;
+    user-select: none;
+}

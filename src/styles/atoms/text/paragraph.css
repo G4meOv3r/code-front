@@ -1,0 +1,38 @@
+.paragraph {
+    animation: paragraph-initial 1s;
+    margin: 3px 0;
+    text-indent: 20px
+}
+
+.paragraph b {
+    animation: paragraph-b-initial 1s;
+    background-color: var(--text-highlight-background);
+    border-radius: 4px;
+    color: var(--text-highlight-color);
+    font-weight: 100;
+    padding: 0 3px 0 4px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: background linear 1s;
+}
+
+@keyframes paragraph-initial {
+    0% {
+        transform: translate(0, 5px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes paragraph-b-initial {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: var(--text-highlight-background);
+    }
+}

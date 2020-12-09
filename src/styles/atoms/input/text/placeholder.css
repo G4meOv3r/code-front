@@ -1,0 +1,19 @@
+.input-text-placeholder {
+    background-color: var(--global-backgound);
+    color: var(--input-text-placeholder-color);
+    font-size: 16px;
+    padding: 0 5px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: top, left, font-size, linear, padding, 100ms;
+    user-select: none;
+}
+
+.input-text-placeholder-active {
+    color: var(--input-text-placeholder-color-active);
+    font-size: 14px;
+    position: absolute;
+    top: -1px;
+}

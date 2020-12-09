@@ -1,0 +1,61 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+:root {
+    /* Global */
+    --global-color: rgb(230, 230, 230);
+    --global-backgound: rgb(15, 15, 20);
+    --global-logo-color: rgb(255, 255, 255);
+
+    /* Link Special */
+    --link-color: rgb(255, 255, 255);
+    --link-background: rgba(90, 120, 170, 0.2);
+    --link-background-active: rgba(90, 120, 170, 0.4);
+    --link-border-color: rgba(90, 120, 170, 0.5);
+    --link-border-color-active: rgba(90, 120, 170, 1);
+
+    /* Text Special */
+    --text-header-color: rgb(255, 255, 255);
+    --text-highlight-color: rgb(255, 255, 255);
+    --text-highlight-background: rgba(90, 120, 170, 0.5);
+
+    /* Input Special */
+    --input-text-placeholder-color: rgb(200, 200, 200);
+    --input-text-placeholder-color-active: rgb(150, 180, 230);
+    --input-text-border-color: rgb(80, 80, 85);
+    --input-text-border-color-active: rgb(90, 120, 170);
+    --input-button-background: rgba(90, 120, 170, 0.8);
+    --input-button-border-color: rgb(255, 255, 255);
+}
+
+#root {
+    background: var(--global-backgound);
+    color: var(--global-color);
+    font-family: Whitney, serif;
+    font-weight: 100;
+    height: 100%;
+    width: 100%;
+}
+
+#root a {
+    background: var(--link-background);
+    border-bottom: 2px solid var(--link-border-color);
+    border-radius: 3px;
+    font-size: 13px;
+    color: var(--link-color);
+    padding: 0 5px;
+    text-decoration: none;
+}
+
+#root a:hover {
+    background: var(--link-background-active);
+    border-bottom: 2px solid var(--link-border-color-active);
+}

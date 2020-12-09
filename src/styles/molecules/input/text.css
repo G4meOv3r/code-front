@@ -1,0 +1,40 @@
+.input-text {
+    animation-name: input-text-initial;
+    animation-duration: 500ms;
+    animation-fill-mode: backwards;
+    align-items: flex-end;
+    display: flex;
+    height: 30px;
+    position: relative;
+    padding: 5px 10px;
+    border: 1px solid var(--input-text-border-color);
+    border-radius: 5px;
+}
+
+.input-text-active {
+    border: 1px solid var(--input-text-border-color-active);
+}
+
+.input-text input {
+    background-color: var(--global-backgound) !important;
+    border: none;
+    color: var(--global-color);
+    font-family: Whitney, serif;
+    font-size: 16px;
+    font-weight: 100;
+    height: 30px;
+    outline: none;
+    padding-left: 5px;
+    width: 100%;
+}
+
+@keyframes input-text-initial {
+    0% {
+        transform: translate(0, 10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
