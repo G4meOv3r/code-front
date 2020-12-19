@@ -34,6 +34,10 @@ body {
     --input-text-border-color-active: rgb(90, 120, 170);
     --input-button-background: rgba(90, 120, 170, 0.8);
     --input-button-border-color: rgb(255, 255, 255);
+
+    /* Card Special */
+    --card-background: rgb(0, 0, 0);
+    --card-error-background: rgb(40, 10, 10);
 }
 
 #root {

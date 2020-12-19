@@ -2,8 +2,9 @@
     animation-name: input-text-initial;
     animation-duration: 500ms;
     animation-fill-mode: backwards;
-    align-items: flex-end;
+    align-items: center;
     display: flex;
+    justify-content: center;
     height: 30px;
     position: relative;
     padding: 5px 10px;

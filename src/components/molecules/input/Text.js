@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from '../../../utils/classNames'
 import Placeholder from '../../atoms/input/text/Placeholder'
+import Card from '../../atoms/card/Card'
 import '../../../styles/molecules/input/text.css'
 
 class Text extends React.Component {
@@ -14,7 +15,7 @@ class Text extends React.Component {
     }
 
     render () {
-        const { name, type, value, placeholder, className, ...otherProps } = this.props
+        const { name, type, value, placeholder, className, validator, ...otherProps } = this.props
         const active = !!value + this.state.focused
         return (
             <div
@@ -25,16 +26,13 @@ class Text extends React.Component {
                     name={name}
                     type={type}
                     value={value}
-                    onFocus={this.onChangeFocus.bind(this, true)}
-                    onBlur={this.onChangeFocus.bind(this, false)}
+                    onFocus={() => { this.setState({ focused: true }) }}
+                    onBlur={() => { this.setState({ focused: false }) }}
                 />
                 <Placeholder value={placeholder} active={active}/>
+                { this.state.focused ? <Card content={validator.content} direction={validator.direction} /> : false }
             </div>
         )
-    }
-
-    onChangeFocus (focused) {
-        this.setState({ focused })
     }
 }
 Text.propTypes = {
@@ -42,6 +40,10 @@ Text.propTypes = {
     type: PropTypes.string,
     value: PropTypes.string,
     placeholder: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    validator: PropTypes.object
+}
+Text.defaultProps = {
+    validator: {}
 }
 export default Text

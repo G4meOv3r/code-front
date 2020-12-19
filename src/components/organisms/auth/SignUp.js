@@ -5,9 +5,9 @@ import Input from '../../molecules/input/Input'
 function SignUp ({ email, password, repeat }) {
     return (
         <>
-            <Input name={'email'} type={'text'} placeholder={'Электронная почта'} value={email}/>
+            <Input name={'email'} type={'email'} placeholder={'Электронная почта'} value={email}/>
             <Input name={'password'} type={'password'} placeholder={'Пароль'} value={password}/>
-            <Input name={'repeat'} type={'password'} placeholder={'Повторите пароль'} value={repeat}/>
+            <Input name={'repeat'} type={'repeat'} placeholder={'Повторите пароль'} value={repeat} password={password}/>
         </>
     )
 }

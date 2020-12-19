@@ -1,19 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from '../../../utils/classNames'
+import Card from '../../atoms/card/Card'
 import '../../../styles/molecules/input/button.css'
 
 class Button extends React.Component {
-    constructor (props) {
-        super(props)
-
-        this.state = {
-            pressed: false
-        }
-    }
-
     render () {
-        const { name, value, className, ...otherProps } = this.props
+        const { card, value, disabled, className, ...otherProps } = this.props
         return (
             <div
                 className={classNames('input-button', className)}
@@ -23,14 +16,20 @@ class Button extends React.Component {
                     name={name}
                     type={'button'}
                     value={value}
+                    disabled={disabled}
                 />
+                { card.visible ? <Card content={card.content} direction={card.direction} /> : false }
             </div>
         )
     }
 }
 Button.propTypes = {
-    name: PropTypes.string.isRequired,
+    card: PropTypes.object,
     value: PropTypes.string,
+    disabled: PropTypes.bool,
     className: PropTypes.string
+}
+Button.defaultProps = {
+    card: {}
 }
 export default Button

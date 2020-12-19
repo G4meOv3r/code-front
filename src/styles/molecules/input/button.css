@@ -1,37 +1,49 @@
 .input-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.input-button input {
     animation-name: input-button-initial;
-    animation-duration: 100ms;
+    animation-duration: 200ms;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
     background: var(--input-button-background);
     border-radius: 5px;
-    width: auto;
-}
-
-.input-button input {
-    animation-duration: 100ms;
-    background: rgba(0, 0, 0, 0) !important;
     border: none;
     color: var(--global-color);
     cursor: pointer;
     font-family: Whitney Book, serif;
     font-size: 15px;
     font-weight: 800;
-    height: 100%;
-    width: 100%;
     outline: none;
+    padding: 9px 20px;
+    width: 100%;
 }
 
-.input-button:active {
+.input-button input:active {
     animation-name: input-button-active-initial;
-    animation-duration: 100ms;
+    animation-duration: 200ms;
     animation-timing-function: ease-in-out;
     transform: scale(0.95);
+}
+
+.input-button input:disabled {
+    animation-name: input-button-disabled-initial;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
+    background: rgb(30, 30, 35);
+    pointer-events: none;
 }
 
 @keyframes input-button-initial {
     0% {
         transform: scale(0.95);
+    }
+    50% {
+        transform: scale(1.05);
     }
     100% {
         transform: scale(1);
@@ -41,6 +53,21 @@
 @keyframes input-button-active-initial {
     0% {
         transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(0.95);
+    }
+}
+
+@keyframes input-button-disabled-initial {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
     }
     100% {
         transform: scale(0.95);

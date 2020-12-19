@@ -6,6 +6,8 @@ import Menu from '../../molecules/menu/Menu'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 import Input from '../../molecules/input/Input'
+import { isSignIn, validateSignIn } from '../../../utils/validators/signin'
+import { isSignUp, validateSignUp } from '../../../utils/validators/signup'
 import '../../../styles/organisms/auth/form.css'
 
 class AuthForm extends React.Component {
@@ -13,6 +15,7 @@ class AuthForm extends React.Component {
         super(props)
 
         this.state = {
+            type: location.pathname.split('/')[2],
             email: '',
             password: '',
             repeat: '',
@@ -28,10 +31,9 @@ class AuthForm extends React.Component {
 
                 <Form onChange={this.onChange.bind(this)}>
                     <Router>
-
                         <Menu>
-                            <Link to={'/auth/signin'}> Войти </Link>
-                            <Link to={'/auth/signup'}> Зарегистрироваться </Link>
+                            <Link to={'/auth/signin'} onClick={() => { this.setState({ type: 'signin' }) }}> Войти </Link>
+                            <Link to={'/auth/signup'} onClick={() => { this.setState({ type: 'signup' }) }}> Зарегистрироваться </Link>
                         </Menu>
 
                         <div className={'auth-form-center'}>
@@ -43,9 +45,14 @@ class AuthForm extends React.Component {
 
                         <div className={'auth-form-lower'}>
                             <div style={{ transform: 'scale(0.8)' }}> <Input name={'remember'} type={'checkbox'} checked={remember} label={'Запомните меня'}/> </div>
-                            <Input type={'button'} value={'Отправить'} style={{ width: '110px', height: '35px' }}/>
+                            <Input
+                                type={'submit'}
+                                value={'Отправить'}
+                                disabled={this.disabled()}
+                                disabledCard={{ visible: this.visible(), content: this.content(), direction: 'top' }}
+                                errorCard={{ visible: false, content: 'неверная электронная почта или пароль', direction: 'top' }}
+                            />
                         </div>
-
                     </Router>
                 </Form>
 
@@ -62,6 +69,33 @@ class AuthForm extends React.Component {
             this.setState({ [e.target.name]: e.target.checked })
         } else {
             this.setState({ [e.target.name]: e.target.value })
+        }
+    }
+
+    disabled () {
+        const { type, email, password, repeat } = this.state
+        if (type === 'signin') {
+            return !isSignIn(email, password)
+        } else {
+            return !isSignUp(email, password, repeat)
+        }
+    }
+
+    visible () {
+        const { type, email, password, repeat } = this.state
+        if (type === 'signin') {
+            return !isSignIn(email, password)
+        } else {
+            return !isSignUp(email, password, repeat)
+        }
+    }
+
+    content () {
+        const { type, email, password, repeat } = this.state
+        if (type === 'signin') {
+            return validateSignIn(email, password)
+        } else {
+            return validateSignUp(email, password, repeat)
         }
     }
 }

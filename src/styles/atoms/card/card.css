@@ -1,0 +1,74 @@
+.card {
+    animation-name: card-initial;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    background: var(--card-background);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: max-content;
+}
+
+@keyframes card-initial {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card-top {
+    bottom: calc(100% + 10px);
+}
+
+.card-right {
+    left: calc(100% + 10px);
+}
+
+.card-bottom {
+    top: calc(100% + 10px);
+}
+.card-left {
+    right: calc(100% + 10px);
+}
+
+.card-content {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.card-pointer {
+    background: inherit;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+}
+
+.card-pointer-top {
+    bottom: 0;
+    left: 50%;
+    transform: rotate(-45deg) translate(-50%, 0);
+}
+
+.card-pointer-right {
+    left: 0;
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+.card-pointer-bottom {
+    left: 50%;
+    top: 0;
+    transform: rotate(45deg) translate(-50%, 0);
+}
+
+.card-pointer-left {
+    right: 0;
+    top: 50%;
+    transform: rotate(45deg) translate(0, -50%);
+}
