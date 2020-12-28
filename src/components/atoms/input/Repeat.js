@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { validateRepeat } from '../../../utils/validators/repeat'
-import Text from './Text'
+import TextInput from './Text'
 
-class Repeat extends React.Component {
+class RepeatInput extends React.Component {
     render () {
         const { name, placeholder, value, ...otherProps } = this.props
 
         return (
-            <Text
+            <TextInput
                 name={name}
                 type={'password'}
                 placeholder={placeholder}
@@ -23,10 +23,10 @@ class Repeat extends React.Component {
         return validateRepeat(this.props.value, this.props.password)
     }
 }
-Repeat.propTypes = {
+RepeatInput.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     value: PropTypes.string,
     password: PropTypes.string
 }
-export default Repeat
+export default RepeatInput

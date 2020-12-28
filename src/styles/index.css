@@ -20,7 +20,7 @@ body {
     --link-background: rgba(90, 120, 170, 0.2);
     --link-background-active: rgba(90, 120, 170, 0.4);
     --link-border-color: rgba(90, 120, 170, 0.5);
-    --link-border-color-active: rgba(90, 120, 170, 1);
+    --link-border-color-active: rgb(90, 120, 170);
 
     /* Text Special */
     --text-header-color: rgb(255, 255, 255);
@@ -37,7 +37,9 @@ body {
 
     /* Card Special */
     --card-background: rgb(0, 0, 0);
+    --card-color: var(--global-color);
     --card-error-background: rgb(40, 10, 10);
+    --card-error-color: rgb(255, 220, 220);
 }
 
 #root {

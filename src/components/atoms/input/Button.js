@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from '../../../utils/classNames'
+import classNames from '../../../utils/helpers/classNames'
 import Card from '../../atoms/card/Card'
-import '../../../styles/molecules/input/button.css'
+import '../../../styles/atoms/input/button.css'
 
-class Button extends React.Component {
+class ButtonInput extends React.Component {
     render () {
         const { card, value, disabled, className, ...otherProps } = this.props
         return (
@@ -23,13 +23,13 @@ class Button extends React.Component {
         )
     }
 }
-Button.propTypes = {
+ButtonInput.propTypes = {
     card: PropTypes.object,
     value: PropTypes.string,
     disabled: PropTypes.bool,
     className: PropTypes.string
 }
-Button.defaultProps = {
+ButtonInput.defaultProps = {
     card: {}
 }
-export default Button
+export default ButtonInput

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from '../../../utils/classNames'
+import classNames from '../../../utils/helpers/classNames'
 import Text from '../../atoms/text/Text'
-import '../../../styles/molecules/input/checkbox.css'
+import '../../../styles/atoms/input/checkbox.css'
 
-function Checkbox ({ name, checked, label, className, ...otherProps }) {
+function CheckboxInput ({ name, checked, label, className, ...otherProps }) {
     return (
         <label
             className={classNames('input-checkbox', checked ? 'input-checkbox-checked' : false, className)}
@@ -13,17 +13,17 @@ function Checkbox ({ name, checked, label, className, ...otherProps }) {
             <input
                 name={name}
                 type={'checkbox'}
-                checked={checked}
+                defaultChecked={checked}
             />
             <div className={'input-checkbox-marker'}/>
             <Text style={{ userSelect: 'none' }}> {label} </Text>
         </label>
     )
 }
-Checkbox.propTypes = {
+CheckboxInput.propTypes = {
     name: PropTypes.string,
-    checked: PropTypes.string,
+    checked: PropTypes.bool,
     label: PropTypes.string,
     className: PropTypes.string
 }
-export default Checkbox
+export default CheckboxInput

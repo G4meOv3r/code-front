@@ -2,7 +2,6 @@ import React from 'react'
 import Text from '../components/atoms/text/Text'
 import Header from '../components/atoms/text/Header'
 import Paragraph from '../components/atoms/text/Paragraph'
-import Input from '../components/molecules/input/Input'
 
 class Index extends React.Component {
     constructor (props) {
@@ -23,11 +22,6 @@ class Index extends React.Component {
                     <Paragraph> В начале ночи каждый заключенный находится в своей клетке. Когда наступает ночь, они могут начать двигаться в соседние клетки. Формально, за одну секунду заключенный, находящийся в клетке <b>(i,j)</b>, может переместиться в любую из клеток <b>(i−1,j)</b>, <b>(i+1,j)</b>, <b>(i,j−1)</b> или <b>(i,j+1)</b>, если они находятся на территории тюрьмы. Он также может остаться в клетке <b>(i,j)</b>. </Paragraph>
                     <Paragraph> Заключенные хотят знать минимальное необходимое время для того, чтобы все они смогли собраться в клетке <b>(r,c)</b> </Paragraph>
                 </Text>
-                <form onChange={this.onChange.bind(this)}>
-                    <Input name={'email'} type='text' value={this.state.value} placeholder={'Электронная почта'} />
-                    <Input name={'password'} type='text' value={this.state.value} placeholder={'Пароль'} />
-                    <Input name={'password'} type={'button'} value={'Отправить'}/>
-                </form>
             </div>
         )
     }

@@ -4,9 +4,10 @@ import '../styles/pages/auth.css'
 
 class Auth extends React.Component {
     render () {
+        const { type } = this.props
         return (
             <div id={'auth-root'}>
-                <AuthForm/>
+                <AuthForm type={type}/>
             </div>
         )
     }

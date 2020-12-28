@@ -1,13 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { authMapStateToProps, authMapDispatchToProps } from '../../../store/maps/auth'
 import LargeLogo from '../../atoms/logo/Large'
-import Form from '../Form'
+import Form from '../../molecules/Form'
 import Menu from '../../molecules/menu/Menu'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
-import Input from '../../molecules/input/Input'
-import { isSignIn, validateSignIn } from '../../../utils/validators/signin'
-import { isSignUp, validateSignUp } from '../../../utils/validators/signup'
+import Input from '../../atoms/input/Input'
+import Submit from './Submit'
 import '../../../styles/organisms/auth/form.css'
 
 class AuthForm extends React.Component {
@@ -15,25 +17,27 @@ class AuthForm extends React.Component {
         super(props)
 
         this.state = {
-            type: location.pathname.split('/')[2],
+            type: this.props.type,
             email: '',
             password: '',
             repeat: '',
-            remember: false
+            remember: false,
+            changed: false
         }
     }
 
     render () {
-        const { email, password, repeat, remember } = this.state
+        const { auth } = this.props
+        const { type, email, password, repeat, remember, changed } = this.state
         return (
             <div className={'auth-form'}>
                 <LargeLogo/>
 
-                <Form onChange={this.onChange.bind(this)}>
+                <Form onChange={this.onChange.bind(this)} onSubmit={this.onSubmit.bind(this)}>
                     <Router>
                         <Menu>
-                            <Link to={'/auth/signin'} onClick={() => { this.setState({ type: 'signin' }) }}> Войти </Link>
-                            <Link to={'/auth/signup'} onClick={() => { this.setState({ type: 'signup' }) }}> Зарегистрироваться </Link>
+                            <Link to={'/auth/signin'} onClick={() => { this.setState({ changed: true, type: 'signin' }) }}> Войти </Link>
+                            <Link to={'/auth/signup'} onClick={() => { this.setState({ changed: true, type: 'signup' }) }}> Зарегистрироваться </Link>
                         </Menu>
 
                         <div className={'auth-form-center'}>
@@ -45,13 +49,7 @@ class AuthForm extends React.Component {
 
                         <div className={'auth-form-lower'}>
                             <div style={{ transform: 'scale(0.8)' }}> <Input name={'remember'} type={'checkbox'} checked={remember} label={'Запомните меня'}/> </div>
-                            <Input
-                                type={'submit'}
-                                value={'Отправить'}
-                                disabled={this.disabled()}
-                                disabledCard={{ visible: this.visible(), content: this.content(), direction: 'top' }}
-                                errorCard={{ visible: false, content: 'неверная электронная почта или пароль', direction: 'top' }}
-                            />
+                            <Submit type={type} email={email} password={password} repeat={repeat} errors={auth.errors} changed={changed}/>
                         </div>
                     </Router>
                 </Form>
@@ -66,37 +64,25 @@ class AuthForm extends React.Component {
 
     onChange (e) {
         if (e.target.type === 'checkbox') {
-            this.setState({ [e.target.name]: e.target.checked })
+            this.setState({ changed: true, [e.target.name]: e.target.checked })
         } else {
-            this.setState({ [e.target.name]: e.target.value })
+            this.setState({ changed: true, [e.target.name]: e.target.value })
         }
     }
 
-    disabled () {
+    onSubmit (e) {
+        e.preventDefault()
         const { type, email, password, repeat } = this.state
-        if (type === 'signin') {
-            return !isSignIn(email, password)
-        } else {
-            return !isSignUp(email, password, repeat)
-        }
-    }
-
-    visible () {
-        const { type, email, password, repeat } = this.state
-        if (type === 'signin') {
-            return !isSignIn(email, password)
-        } else {
-            return !isSignUp(email, password, repeat)
-        }
-    }
-
-    content () {
-        const { type, email, password, repeat } = this.state
-        if (type === 'signin') {
-            return validateSignIn(email, password)
-        } else {
-            return validateSignUp(email, password, repeat)
-        }
+        this.props.authorize(type, { email, password, repeat })
+        this.setState({ changed: false })
     }
 }
-export default AuthForm
+AuthForm.propTypes = {
+    type: PropTypes.string,
+    auth: PropTypes.object,
+    authorize: PropTypes.func
+}
+export default connect(
+    authMapStateToProps,
+    authMapDispatchToProps
+)(AuthForm)

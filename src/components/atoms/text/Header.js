@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from '../../../utils/classNames'
+import classNames from '../../../utils/helpers/classNames'
 import '../../../styles/atoms/text/header.css'
 
 function Header ({ children, className, ...otherProps }) {

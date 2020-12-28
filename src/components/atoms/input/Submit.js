@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from '../../../utils/classNames'
+import classNames from '../../../utils/helpers/classNames'
 import Card from '../../atoms/card/Card'
-import '../../../styles/molecules/input/button.css'
+import '../../../styles/atoms/input/button.css'
 
-class Submit extends React.Component {
+class SubmitInput extends React.Component {
     constructor (props) {
         super(props)
 
@@ -27,23 +27,22 @@ class Submit extends React.Component {
                     type={'submit'}
                     value={value}
                     disabled={disabled}
-                    onClick={(e) => { e.preventDefault() }}
                 />
                 { this.state.visible && disabledCard.visible ? <Card content={disabledCard.content} direction={disabledCard.direction} /> : false }
-                { errorCard.visible ? <Card content={errorCard.content} direction={errorCard.direction} style={{ backgroundColor: 'var(--card-error-background)' }} /> : false }
+                { !disabled && errorCard.visible ? <Card content={errorCard.content} direction={errorCard.direction} style={{ backgroundColor: 'var(--card-error-background)', color: 'var(--card-error-color)' }} /> : false }
             </div>
         )
     }
 }
-Submit.propTypes = {
+SubmitInput.propTypes = {
     disabledCard: PropTypes.object,
     errorCard: PropTypes.object,
     value: PropTypes.string,
     disabled: PropTypes.bool,
     className: PropTypes.string
 }
-Submit.defaultProps = {
+SubmitInput.defaultProps = {
     disabledCard: {},
     errorCard: {}
 }
-export default Submit
+export default SubmitInput

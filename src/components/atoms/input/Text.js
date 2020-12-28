@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from '../../../utils/classNames'
-import Placeholder from '../../atoms/input/text/Placeholder'
+import classNames from '../../../utils/helpers/classNames'
 import Card from '../../atoms/card/Card'
-import '../../../styles/molecules/input/text.css'
+import Text from '../text/Text'
+import '../../../styles/atoms/input/text.css'
 
-class Text extends React.Component {
+class TextInput extends React.Component {
     constructor (props) {
         super(props)
 
@@ -25,25 +25,32 @@ class Text extends React.Component {
                 <input
                     name={name}
                     type={type}
-                    value={value}
+                    defaultValue={value}
                     onFocus={() => { this.setState({ focused: true }) }}
                     onBlur={() => { this.setState({ focused: false }) }}
                 />
-                <Placeholder value={placeholder} active={active}/>
+                <Text className={
+                    classNames(
+                        'input-text-placeholder',
+                        active ? 'input-text-placeholder-active' : false
+                    )
+                }>
+                    {placeholder}
+                </Text>
                 { this.state.focused ? <Card content={validator.content} direction={validator.direction} /> : false }
             </div>
         )
     }
 }
-Text.propTypes = {
-    name: PropTypes.string.isRequired,
+TextInput.propTypes = {
+    name: PropTypes.string,
     type: PropTypes.string,
     value: PropTypes.string,
     placeholder: PropTypes.string,
     className: PropTypes.string,
     validator: PropTypes.object
 }
-Text.defaultProps = {
+TextInput.defaultProps = {
     validator: {}
 }
-export default Text
+export default TextInput
