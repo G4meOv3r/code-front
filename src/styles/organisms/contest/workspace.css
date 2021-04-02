@@ -1,0 +1,15 @@
+.workspace {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.workspace-menu {
+    width: 100%;
+    height: 20px;
+}
+
+.workspace-content {
+    display: flex;
+    flex: 1;
+}

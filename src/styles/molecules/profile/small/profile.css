@@ -1,0 +1,62 @@
+.profile-small {
+    animation-name: profile-friends-friend-initial;
+    animation-duration: 300ms;
+    align-items: center;
+    border: 1px solid var(--profile-border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: center;
+    padding: 5px 10px;
+    margin: 0 5px 5px 0;
+    user-select: none;
+}
+
+.profile-small-online {
+    border-color: var(--profile-online-border-color)
+}
+
+.profile-small-avatar {
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+}
+
+.profile-small-names {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-small-nickname-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-small-nickname {
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.profile-small-award {
+    height: 15px;
+    margin: 0;
+    width: 15px;
+}
+
+.profile-small-status {
+    font-size: 12px;
+}
+
+@keyframes profile-friends-friend-initial {
+    0% {
+        opacity: 0;
+        transform: translate(0, -10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

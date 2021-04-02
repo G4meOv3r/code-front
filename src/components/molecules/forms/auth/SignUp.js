@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Input from '../../atoms/input/Input'
+import Input from '../../../atoms/input/Input'
 
 function SignUp ({ email, password, repeat }) {
     return (

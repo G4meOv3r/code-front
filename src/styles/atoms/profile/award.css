@@ -1,0 +1,13 @@
+.profile-award {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 7px;
+    position: relative;
+}
+
+.profile-award img {
+    height: 100%;
+    width: 100%;
+}

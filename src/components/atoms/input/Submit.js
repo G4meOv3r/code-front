@@ -14,10 +14,10 @@ class SubmitInput extends React.Component {
     }
 
     render () {
-        const { disabledCard, errorCard, value, disabled, className, ...otherProps } = this.props
+        const { disabledCard, errorCard, value, disabled, className, styleType, ...otherProps } = this.props
         return (
             <div
-                className={classNames('input-button', className)}
+                className={'input-button'}
                 onMouseEnter={() => { this.setState({ visible: true }) }}
                 onMouseLeave={() => { this.setState({ visible: false }) }}
                 {...otherProps}
@@ -26,6 +26,7 @@ class SubmitInput extends React.Component {
                     name={name}
                     type={'submit'}
                     value={value}
+                    className={classNames('input-button-input', `input-button-input-${styleType}`, className)}
                     disabled={disabled}
                 />
                 { this.state.visible && disabledCard.visible ? <Card content={disabledCard.content} direction={disabledCard.direction} /> : false }
@@ -39,10 +40,12 @@ SubmitInput.propTypes = {
     errorCard: PropTypes.object,
     value: PropTypes.string,
     disabled: PropTypes.bool,
-    className: PropTypes.string
+    className: PropTypes.string,
+    styleType: PropTypes.string
 }
 SubmitInput.defaultProps = {
     disabledCard: {},
-    errorCard: {}
+    errorCard: {},
+    styleType: 'positive'
 }
 export default SubmitInput

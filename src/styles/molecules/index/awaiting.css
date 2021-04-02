@@ -1,0 +1,7 @@
+.awaiting-contest {
+    border: 1px solid rgb(90, 120, 170);
+    height: 100%;
+    width: 250px;
+    border-radius: 7px;
+    margin-right: 5px;
+}

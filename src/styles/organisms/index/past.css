@@ -1,0 +1,22 @@
+.past-contests {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 40px 0 0 0;
+}
+
+.past-contests-title {
+    font-weight: 800;
+    font-size: 16px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    color: rgb(100, 100, 100);
+}
+
+.past-contests-contests {
+    display: flex;
+    flex-direction: row;
+    height: 140px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}

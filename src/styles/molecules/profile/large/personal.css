@@ -1,0 +1,69 @@
+.profile-personal-wrapper {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-personal {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-personal-avatar {
+    width: 90px;
+    height: 90px;
+}
+
+.profile-personal-names {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 10px;
+}
+
+.profile-personal-nickname {
+    font-size: 35px;
+    margin-right: 10px;
+}
+
+.profile-personal-award {
+    height: 30px;
+    margin: 10px 0;
+    width: 30px;
+}
+
+.profile-personal-nickname-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-personal-fullName-wrapper {
+    color: rgb(200, 200, 200);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.profile-personal-fullName {
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.profile-personal-status {
+    font-size: 15px;
+}
+
+.profile-personal-action {
+    font-size: 12px;
+    padding: 7px 20px;
+}
+
+@keyframes profile-personal-friendship-initial {
+    0% {
+        transform: translate(0, 5px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}

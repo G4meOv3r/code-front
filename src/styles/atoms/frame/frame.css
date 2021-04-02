@@ -1,0 +1,16 @@
+.frame {
+    position: relative;
+    border: 1px solid rgb(90, 120, 170);
+    border-radius: 5px;
+    padding: 15px 10px;
+}
+
+.frame-title {
+    background: var(--global-backgound);
+    color: rgb(150, 180, 230);
+    font-size: 14px;
+    padding: 0 5px;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}

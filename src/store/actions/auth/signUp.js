@@ -1,5 +1,5 @@
 export const signUp = query => ({
-    type: 'AUTH',
+    type: 'GET_TOKEN',
     rest: '/auth/signup',
     method: 'POST',
     query

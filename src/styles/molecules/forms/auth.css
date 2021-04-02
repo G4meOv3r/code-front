@@ -1,15 +1,4 @@
 .auth-form {
-    animation-name: auth-form-initial;
-    animation-duration: 1s;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    width: 400px;
-    height: 600px;
-}
-
-.auth-form form {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -35,18 +24,6 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-}
-
-.auth-form-navigate {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-
-.auth-form-navigate a {
-    margin: 5px 0;
 }
 
 @keyframes auth-form-initial {

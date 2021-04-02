@@ -1,0 +1,57 @@
+.input-award-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-award {
+    animation-name: input-award;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    height: 30px;
+    filter: grayscale(1);
+    width: 30px;
+    margin: 0;
+}
+
+.input-award-input {
+    position: absolute;
+    opacity: 0;
+}
+
+.input-award-input:checked + .input-award {
+    animation-name: input-award-checked;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes input-award {
+    0% {
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9 );
+    }
+
+    100% {
+        filter: grayscale(1);
+        transform: scale(0.95);
+    }
+}
+
+@keyframes input-award-checked {
+    0% {
+        filter: grayscale(1);
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+}

@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from '../../../utils/helpers/classNames'
 import Card from '../../atoms/card/Card'
-import Text from '../text/Text'
 import '../../../styles/atoms/input/text.css'
 
 class TextInput extends React.Component {
@@ -29,14 +28,14 @@ class TextInput extends React.Component {
                     onFocus={() => { this.setState({ focused: true }) }}
                     onBlur={() => { this.setState({ focused: false }) }}
                 />
-                <Text className={
+                <div className={
                     classNames(
                         'input-text-placeholder',
                         active ? 'input-text-placeholder-active' : false
                     )
                 }>
                     {placeholder}
-                </Text>
+                </div>
                 { this.state.focused ? <Card content={validator.content} direction={validator.direction} /> : false }
             </div>
         )

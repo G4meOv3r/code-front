@@ -1,0 +1,17 @@
+.text-link {
+    align-items: center;
+    background: var(--link-background);
+    border-bottom: 2px solid var(--link-border-color);
+    border-radius: 3px;
+    color: var(--link-color);
+    display: flex;
+    font-size: 13px;
+    padding: 0 5px;
+    text-decoration: none;
+    user-select: none;
+}
+
+.text-link:hover {
+    background: var(--link-background-active);
+    border-bottom: 2px solid var(--link-border-color-active);
+}

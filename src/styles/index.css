@@ -13,6 +13,8 @@ body {
     /* Global */
     --global-color: rgb(230, 230, 230);
     --global-backgound: rgb(15, 15, 20);
+    --global-error-color: rgb(150, 70, 70);
+    --global-error-backgound: rgb(40, 10, 10);;
     --global-logo-color: rgb(255, 255, 255);
 
     /* Link Special */
@@ -26,20 +28,31 @@ body {
     --text-header-color: rgb(255, 255, 255);
     --text-highlight-color: rgb(255, 255, 255);
     --text-highlight-background: rgba(90, 120, 170, 0.5);
+    --text-quote-color: rgb(200, 200, 200);
+    --text-quote-quotes-color: rgb(255, 255, 255);
+    --text-quote-author-color: rgb(255, 255, 255);
 
     /* Input Special */
     --input-text-placeholder-color: rgb(200, 200, 200);
     --input-text-placeholder-color-active: rgb(150, 180, 230);
     --input-text-border-color: rgb(80, 80, 85);
     --input-text-border-color-active: rgb(90, 120, 170);
-    --input-button-background: rgba(90, 120, 170, 0.8);
-    --input-button-border-color: rgb(255, 255, 255);
+    --input-button-positive-color: var(--global-color);
+    --input-button-positive-background: rgb(90, 120, 170);
+    --input-button-negative-color: var(--global-error-color);
+    --input-button-negative-background: var(--global-error-backgound);
 
     /* Card Special */
-    --card-background: rgb(0, 0, 0);
     --card-color: var(--global-color);
-    --card-error-background: rgb(40, 10, 10);
-    --card-error-color: rgb(255, 220, 220);
+    --card-background: rgb(0, 0, 0);
+    --card-error-color: var(--global-error-color);
+    --card-error-background: var(--global-error-backgound);
+
+    /* Profile Special */
+    --profile-border-color: rgb(80, 80, 85);
+    --profile-online-border-color: rgb(90, 120, 170);
+    --profile-status-color: rgb(100, 100, 100);
+    --profile-status-online-color: rgb(90, 120, 170);
 }
 
 #root {
@@ -49,19 +62,4 @@ body {
     font-weight: 100;
     height: 100%;
     width: 100%;
-}
-
-#root a {
-    background: var(--link-background);
-    border-bottom: 2px solid var(--link-border-color);
-    border-radius: 3px;
-    font-size: 13px;
-    color: var(--link-color);
-    padding: 0 5px;
-    text-decoration: none;
-}
-
-#root a:hover {
-    background: var(--link-background-active);
-    border-bottom: 2px solid var(--link-border-color-active);
 }

@@ -1,5 +1,7 @@
-import { authReducer } from './auth/authReduser'
+import authReducer from './auth'
+import profileReducer from './profile'
 
 export const rootReducer = {
-    auth: authReducer
+    auth: authReducer,
+    profile: profileReducer
 }

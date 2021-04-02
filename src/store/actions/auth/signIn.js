@@ -1,5 +1,5 @@
 export const signIn = query => ({
-    type: 'AUTH',
+    type: 'GET_TOKEN',
     rest: '/auth/signin',
     method: 'POST',
     query

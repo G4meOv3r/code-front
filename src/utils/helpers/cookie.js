@@ -1,7 +1,7 @@
 export function getCookie (name) {
-    const matches = document.cookie.match(new RegExp(
-        '(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'
-    ))
+    // eslint-disable-next-line
+    const regExp = new RegExp('(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)')
+    const matches = document.cookie.match(regExp)
     return matches ? decodeURIComponent(matches[1]) : undefined
 }
 

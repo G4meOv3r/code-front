@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { isSignIn, validateSignIn } from '../../../utils/validators/signin'
-import { isSignUp, validateSignUp } from '../../../utils/validators/signup'
-import Input from '../../atoms/input/Input'
+import { isSignIn, validateSignIn } from '../../../../utils/validators/signin'
+import { isSignUp, validateSignUp } from '../../../../utils/validators/signup'
+import Input from '../../../atoms/input/Input'
 
 class Submit extends React.Component {
     render () {
@@ -14,6 +14,7 @@ class Submit extends React.Component {
                 disabled={this.disabled()}
                 disabledCard={{ visible: this.disabled(), content: this.content(), direction: 'top' }}
                 errorCard={{ visible: !changed && errors, content: () => { return errors.message }, direction: 'top' }}
+                style={{ width: '120px', height: '36px' }}
             />
         )
     }

@@ -1,15 +1,19 @@
 import React from 'react'
-import AuthForm from '../components/organisms/auth/Form'
+import PropTypes from 'prop-types'
+import Auth from '../components/organisms/auth/Auth'
 import '../styles/pages/auth.css'
 
-class Auth extends React.Component {
+class AuthPage extends React.Component {
     render () {
         const { type } = this.props
         return (
             <div id={'auth-root'}>
-                <AuthForm type={type}/>
+                <Auth type={type}/>
             </div>
         )
     }
 }
-export default Auth
+AuthPage.propTypes = {
+    type: PropTypes.string
+}
+export default AuthPage

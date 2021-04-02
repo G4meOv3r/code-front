@@ -1,0 +1,22 @@
+.auth {
+    animation-name: auth-form-initial;
+    animation-duration: 1s;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+}
+
+.auth-navigate {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.auth-navigate a {
+    margin: 5px 0;
+}

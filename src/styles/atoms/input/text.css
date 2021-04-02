@@ -1,6 +1,6 @@
 .input-text {
     animation-name: input-text-initial;
-    animation-duration: 500ms;
+    animation-duration: 300ms;
     animation-fill-mode: backwards;
     align-items: center;
     display: flex;
@@ -39,8 +39,12 @@
         transform: translate(0, 10px);
         opacity: 0;
     }
+    90% {
+        transform: translate(0, -1px);
+        opacity: 1;
+    }
     100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0px);
         opacity: 1;
     }
 }

@@ -1,0 +1,28 @@
+.profile {
+    animation-name: profile-initial;
+    animation-duration: 400ms;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 800px;
+}
+
+.profile-header {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10% 0 30px 0;
+}
+
+@keyframes profile-initial {
+    0% {
+        opacity: 0;
+        transform: translate(0, -10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

@@ -5,22 +5,35 @@
     position: relative;
 }
 
-.input-button input {
+.input-button-input {
     animation-name: input-button-initial;
     animation-duration: 200ms;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    background: var(--input-button-background);
     border-radius: 5px;
     border: none;
-    color: var(--global-color);
     cursor: pointer;
     font-family: Whitney Book, serif;
     font-size: 15px;
     font-weight: 800;
+    height: 100%;
     outline: none;
-    padding: 9px 20px;
     width: 100%;
+}
+
+.input-button-input-positive {
+    background: var(--input-button-positive-background);
+    color: var(--input-button-positive-color);
+}
+
+.input-button-input-negative {
+    background: var(--input-button-negative-background);
+    color: var(--input-button-negative-color);
+    opacity: 0.4;
+}
+
+.input-button-input-negative:hover {
+    opacity: 1;
 }
 
 .input-button input:active {
