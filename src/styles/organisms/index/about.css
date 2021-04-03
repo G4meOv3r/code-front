@@ -1,0 +1,79 @@
+.about {
+    position: relative;
+    width: 900px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.about::-webkit-scrollbar {
+    width: 0;
+}
+
+.about__header {
+    background: rgb(20, 20, 25);
+    padding: 50px 50px;
+    user-select: none;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.about__header h1 {
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 80px;
+    margin: 0;
+    font-style: italic;
+}
+
+.about__header h2 {
+    font-weight: 100;
+    font-size: 18px;
+    margin: 10px 0 0 0;
+    color: rgb(190, 190, 190);
+    font-style: italic;
+}
+
+.about__road {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.about__road__stage {
+    width: 100%;
+    margin: 40px 0;
+    user-select: none;
+}
+
+.about__road__stage__hidden {
+    opacity: 0.4;
+    transition: opacity 200ms ease-in;
+}
+.about__road__stage__hidden:hover {
+    opacity: 1;
+}
+
+.about__road__stage h1 {
+    font-weight: 800;
+    font-size: 30px;
+    margin: 0;
+    font-style: italic;
+}
+
+.about__road__stage p {
+    font-size: 16px;
+}
+
+.about__road__stage a {
+    font-size: 15px;
+}
+
+.about__footer {
+    background: rgb(20, 20, 25);
+    padding: 10px 50px;
+    user-select: none;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+    height: 70px;
+}
+
+.about__footer a {
+    font-size: 15px;
+}

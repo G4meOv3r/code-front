@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Contests from '../components/organisms/index/Contests'
+import About from '../components/organisms/index/About'
 
 import '../styles/pages/index.css'
 
 const IndexPage = (props) => {
     return (
         <div className={'index-root'}>
-            <Contests/>
+            <About/>
         </div>
     )
 }
