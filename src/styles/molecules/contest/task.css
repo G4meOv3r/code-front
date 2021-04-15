@@ -1,0 +1,85 @@
+.task {
+    animation: task-initial linear 300ms;
+    background-color: rgb(20, 20, 25);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.3);
+    width: 900px;
+    height: fit-content;
+}
+.task__text {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px;
+    z-index: 1;
+}
+.task__text p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+.task__text h1 {
+    margin: 5px 0;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.task__text h2 {
+    margin: 5px 0;
+    font-size: 25px;
+}
+.task__upload {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+.task__upload p {
+    width: 400px;
+    margin: 0;
+    opacity: 0.4;
+}
+.task__upload:hover p {
+    opacity: 1;
+}
+
+.task__upload input {
+    padding: 9px 25px;
+}
+
+.task__packages {
+    width: 100%;
+    margin: 20px 0;
+    padding: 5px 10px;
+}
+
+.task__packages a {
+    justify-content: center;
+}
+
+.task__packages tr {
+    background: rgb(25, 25, 30);
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.3);
+    height: 40px;
+}
+.task__packages td {
+    text-align: center;
+    max-width: 150px;
+    padding: 5px 10px;
+    border-top: solid 1px rgb(10, 10, 15);
+    font-size: 15px;
+}
+
+.CodeMirror {
+    z-index: 3;
+}
+
+@keyframes task-initial {
+    0% {
+        transform: translate(0, 5px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0px);
+        opacity: 1;
+    }
+}
+

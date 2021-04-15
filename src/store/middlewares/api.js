@@ -1,11 +1,13 @@
 import { BASE_URL } from '../../utils/constants'
+import socket from '../ws'
 
 export const httpApi = store => next => action => {
     if (!action.rest) {
         next(action)
         return
     }
-    const url = BASE_URL + action.rest
+
+    const url = `${BASE_URL}${action.rest}?` + new URLSearchParams(action.method === 'GET' ? action.query : {})
 
     next({
         ...action,
@@ -47,6 +49,7 @@ export const httpApi = store => next => action => {
             }
         })
         .catch(error => {
+            console.log('catch', error)
             next({
                 error: error,
                 type: action.type + '_FAIL',
@@ -56,12 +59,18 @@ export const httpApi = store => next => action => {
 }
 
 export const wsApi = store => next => action => {
-    if (action.method !== 'WS') {
+    if (!action.event || action.method !== 'WS') {
         next(action)
         return
     }
-
-    const socket = store.getState().auth.socket
-
-    socket.send(JSON.stringify(action.data))
+    const token = store.getState().auth.token
+    if (token && !socket.auth.token) {
+        socket.auth.token = token
+        socket.disconnect().connect()
+    }
+    socket.emit(action.event, action.data)
+    next({
+        ...action,
+        type: action.type + '_COMPLETE'
+    })
 }

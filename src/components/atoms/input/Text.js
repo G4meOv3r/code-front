@@ -44,7 +44,7 @@ class TextInput extends React.Component {
 TextInput.propTypes = {
     name: PropTypes.string,
     type: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.any,
     placeholder: PropTypes.string,
     className: PropTypes.string,
     validator: PropTypes.object

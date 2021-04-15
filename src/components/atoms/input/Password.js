@@ -26,6 +26,6 @@ class PasswordInput extends React.Component {
 PasswordInput.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
-    value: PropTypes.string
+    value: PropTypes.any
 }
 export default PasswordInput

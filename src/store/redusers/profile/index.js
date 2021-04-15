@@ -2,35 +2,33 @@ import { createReducer } from '@reduxjs/toolkit'
 import personalReducers from './personalReducers'
 import friendsReducers from './friendsReducers'
 import friendshipReducers from './friendshipRedusers'
+import profilesReducers from './profiles'
+import changeProfileReducers from './changeProfile'
 
 const initialState = {
     _id: '',
-    personal: {
-        data: {
-            nickname: '',
-            name: '',
-            lastName: '',
-            awards: [],
-            status: 0
-        },
+    change: {
         isLoading: false,
-        errors: null
+        errors: null,
+        success: false
+    },
+    profiles: {
+        isLoading: false,
+        errors: null,
+        profiles: []
     },
     friends: {
-        data: [],
         isLoading: false,
-        errors: null
-    },
-    friendship: {
-        friendship: 0,
-        isLoading: false,
-        errors: null
+        errors: null,
+        data: []
     }
 }
 
 const profileReducer = createReducer(initialState, {
     ...personalReducers,
     ...friendsReducers,
-    ...friendshipReducers
+    ...friendshipReducers,
+    ...profilesReducers,
+    ...changeProfileReducers
 })
 export default profileReducer

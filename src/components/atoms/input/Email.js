@@ -26,6 +26,6 @@ class EmailInput extends React.Component {
 EmailInput.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
-    value: PropTypes.string
+    value: PropTypes.any
 }
 export default EmailInput

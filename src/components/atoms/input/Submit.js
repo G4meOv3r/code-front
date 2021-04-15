@@ -38,7 +38,7 @@ class SubmitInput extends React.Component {
 SubmitInput.propTypes = {
     disabledCard: PropTypes.object,
     errorCard: PropTypes.object,
-    value: PropTypes.string,
+    value: PropTypes.any,
     disabled: PropTypes.bool,
     className: PropTypes.string,
     styleType: PropTypes.string

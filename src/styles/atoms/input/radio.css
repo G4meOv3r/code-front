@@ -1,0 +1,69 @@
+.input-radio {
+    animation: input-checkbox-initial 200ms ease-out;
+    animation-fill-mode: forwards;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-family: Whitney Book, serif;
+    font-weight: 800;
+    height: 30px;
+    padding: 5px 20px;
+    border: 1px solid var(--input-text-border-color);
+    border-radius: 5px;
+    transition: background ease-out 200ms;
+}
+
+.input-radio-checked {
+    background: rgba(90, 120, 170, 0.8);
+    border: 1px solid rgb(90, 120, 170);
+}
+
+.input-radio:active {
+    animation: input-checkbox-active 200ms ease-in;
+    animation-fill-mode: forwards;
+}
+
+.input-radio-marker {
+    border: 1px solid var(--input-text-border-color);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 20px;
+    margin-right: 10px;
+    width: 20px;
+    transition: background ease-in 100ms;
+}
+
+.input-radio-checked .input-radio-marker {
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.input-radio input[type=radio] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+
+@keyframes input-radio-initial {
+    0% {
+        transform: scale(0.98);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes input-radio-active {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(0.95);
+    }
+}

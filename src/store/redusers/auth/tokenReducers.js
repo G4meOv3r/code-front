@@ -1,4 +1,5 @@
 import { setCookie } from '../../../utils/helpers/cookie'
+import socket from '../../ws'
 
 const tokenReducers = {
     GET_TOKEN_START: (state) => {
@@ -10,6 +11,10 @@ const tokenReducers = {
         state.isLoading = false
         state._id = action.data._id
         state.token = action.data.token
+
+        socket.auth.token = action.data.token
+        socket.disconnect().connect()
+
         setCookie('_id', state._id)
         setCookie('token', state.token)
         state.isAuthorized = true

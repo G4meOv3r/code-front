@@ -1,0 +1,36 @@
+.contest-root {
+    animation: contest-initial linear 300ms;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.contest-root::-webkit-scrollbar {
+    width: 5px;
+}
+
+.contest-root::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+}
+
+.contest-root::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    outline: 0;
+}
+
+@keyframes contest-initial {
+    0% {
+        transform: translate(0, 5px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0px);
+        opacity: 1;
+    }
+}
+

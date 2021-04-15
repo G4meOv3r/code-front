@@ -14,10 +14,11 @@ const About = () => {
                 <div className={'about__road__stage about__road__stage__hidden'}>
                     <h1> 0. БЕЗ АВТОРИЗАЦИИ </h1>
                     <p>
-                        Просмотр общей информации о контестах, пользователях доступен без регистрации или входа. <br/>
+                        Просмотр общей информации о контестах, пользователях и задачах доступен без регистрации или входа. <br/>
                         <b> <i> Начните прямо сейчас! </i> </b>
-                        <TextLink to={'/contests'} style={{ display: 'inline' }}> контесты </TextLink>
-                        <TextLink to={'/profiles'} style={{ display: 'inline' }}> пользователи </TextLink>
+                        <TextLink to={'/contest'} style={{ display: 'inline' }}> контесты </TextLink>
+                        <TextLink to={'/profile'} style={{ display: 'inline' }}> пользователи </TextLink>
+                        <TextLink to={'/task'} style={{ display: 'inline' }}> задачи </TextLink>
                     </p>
                 </div>
                 <div className={'about__road__stage'}>
@@ -39,7 +40,7 @@ const About = () => {
                     <h1> 3. ПОИСК ИЛИ СОЗДАНИЕ КОНТЕСТА </h1>
                     <p>
                         После регистрации или входа на странице
-                        <TextLink to={'/contests'} style={{ display: 'inline' }}>контестов</TextLink>
+                        <TextLink to={'/contest'} style={{ display: 'inline' }}>контестов</TextLink>
                         появятся интерактивные объекты предлагающие создать или найти контест.
                     </p>
                 </div>
@@ -49,7 +50,7 @@ const About = () => {
                         Когда контест будет начат вам будет предложен набор задач, решения которых необходимо отправить в соответсвующую форму для установки в очередь автоматической системы оценивания. <br/>
                     </p>
                     <p>
-                        Если вы хотите решать задачи без привязки ко времени или сопернику посетите <TextLink to={'/contests'} style={{ display: 'inline' }}>страницу со всеми задачами</TextLink>.
+                        Если вы хотите решать задачи без привязки ко времени или сопернику посетите <TextLink to={'/task'} style={{ display: 'inline' }}>страницу со всеми задачами</TextLink>.
                     </p>
                 </div>
                 <div className={'about__road__stage'}>

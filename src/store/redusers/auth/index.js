@@ -1,7 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit'
 import { getCookie } from '../../../utils/helpers/cookie'
 import tokenReducers from './tokenReducers'
-import ticketReducers from './ticketReducers'
 
 const token = getCookie('token')
 const _id = getCookie('_id')
@@ -14,7 +13,6 @@ const initialState = {
 }
 
 const authReducer = createReducer(initialState, {
-    ...tokenReducers,
-    ...ticketReducers
+    ...tokenReducers
 })
 export default authReducer

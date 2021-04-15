@@ -1,0 +1,39 @@
+.edit-profile {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.edit-profile__header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.edit-profile__header h1 {
+    margin: 10px 0;
+    font-size: 40px;
+}
+
+.edit-profile__content {
+    display: flex;
+    flex-direction: column;
+}
+.edit-profile__content .input-text {
+    margin: 10px 0;
+}
+
+.edit-profile__content__preview {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 50px 0;
+}
+
+.edit-profile .input-button {
+    display: flex;
+    align-self: center;
+    margin-top: 10px;
+}
+.edit-profile input[type=button] {
+    padding: 10px 30px;
+}

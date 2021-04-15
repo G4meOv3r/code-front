@@ -1,22 +1,21 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import AuthPage from './pages/Auth'
 import IndexPage from './pages/Index'
 import ProfilePage from './pages/Profile'
-import SearchPage from './pages/Search'
-import ContestPage from './pages/Contest'
-import { getTicket } from './store/actions/auth/getTicket'
+import ContestsPage from './pages/Contests'
+import ContestPage from './pages/contest/Contest'
+import ContestCreatePage from './pages/contest/Create'
+import TasksPage from './pages/Tasks'
+import TaskPage from './pages/task/Task'
+import ProfilesPage from './pages/Profiles'
+import EditProfilePage from './pages/EditProfile'
+import PackagePage from './pages/Package'
 
 const App = () => {
     const auth = useSelector(store => store.auth)
-
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(getTicket())
-    }, [])
-
     return (
         <Router>
             <Switch>
@@ -25,10 +24,18 @@ const App = () => {
                 <Route exact path='/auth/signin'> { auth.isAuthorized ? <Redirect to={'/'}/> : <AuthPage type={'signin'} /> } </Route>
                 <Route exact path='/auth/signup'> { auth.isAuthorized ? <Redirect to={'/'}/> : <AuthPage type={'signup'} /> } </Route>
 
-                <Route path='/profile' component={ProfilePage}/>
+                <Route exact path='/profile' component={ProfilesPage}/>
+                <Route exact path='/profile/edit'> {!auth.isAuthorized ? <Redirect to={'/auth/signin'}/> : <EditProfilePage/>} </Route>
+                <Route path='/profile/:profileId' render={() => { return <ProfilePage/> }}/>
 
-                <Route exact path='/search'> { auth.isAuthorized ? <SearchPage type={'signup'} /> : <Redirect to={'/auth/signin'}/> } </Route>
-                <Route path='/contest' component={ContestPage}/>
+                <Route exact path='/contest' component={ContestsPage}/>
+                <Route exact path='/contest/create'> { auth.isAuthorized ? <ContestCreatePage/> : <Redirect to={'/auth/signin'} /> } </Route>
+                <Route exact path='/contest/:contestId' component={ContestPage}/>
+
+                <Route exact path='/task' component={TasksPage}/>
+                <Route exact path='/task/:taskId' component={TaskPage}/>
+
+                <Route exact path='/package/:packageId' component={PackagePage}/>
             </Switch>
         </Router>
     )

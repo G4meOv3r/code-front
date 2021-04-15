@@ -23,7 +23,7 @@ function ButtonInput ({ card, value, disabled, className, styleType, ...otherPro
 }
 ButtonInput.propTypes = {
     card: PropTypes.object,
-    value: PropTypes.string,
+    value: PropTypes.any,
     disabled: PropTypes.bool,
     className: PropTypes.string,
     styleType: PropTypes.string

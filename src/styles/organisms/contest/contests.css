@@ -1,0 +1,74 @@
+.contests {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 100%;
+}
+
+.contests__header {
+    display: flex;
+    margin: 10% 0 10px 0;
+    flex-direction: column;
+}
+
+.contests__header > a {
+    align-self: flex-start;
+}
+
+.contests__header h1 {
+    font-weight: 800;
+    font-size: 40px;
+    margin: 10px 0;
+    line-height: 40px;
+}
+
+.contests__header__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+}
+
+.contests__header input[type=button] {
+    font-size: 14px;
+    padding: 5px 35px;
+}
+
+.contests__content {
+    margin: 20px 0;
+}
+.contests__content > section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+}
+.contests__content section h1 {
+    margin-bottom: 20px;
+}
+
+.contests__live > h1 {
+    color: rgb(150 10 10);
+}
+.contests__live > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contests__waiting > h1 {
+    color: rgb(110 150 190);
+}
+.contests__waiting > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.contests__past > h1 {
+    color: rgb(100, 100, 100);
+}
+.contests__past > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}

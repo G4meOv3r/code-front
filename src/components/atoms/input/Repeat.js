@@ -26,7 +26,7 @@ class RepeatInput extends React.Component {
 RepeatInput.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.any,
     password: PropTypes.string
 }
 export default RepeatInput

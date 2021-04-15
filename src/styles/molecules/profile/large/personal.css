@@ -54,6 +54,10 @@
     font-size: 15px;
 }
 
+.profile-personal-action input {
+    font-size: 12px;
+    padding: 7px 20px;
+}
 .profile-personal-action {
     font-size: 12px;
     padding: 7px 20px;

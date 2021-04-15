@@ -1,0 +1,108 @@
+.contest-create {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    user-select: none;
+}
+
+.contest-create h1 {
+    font-size: 45px;
+    margin: 0;
+}
+
+.contest-create h2 {
+    font-size: 21px;
+    margin-top: 30px;
+}
+
+.contest-create > div {
+    margin-bottom: 20px;
+}
+
+.contest-create .input-text {
+    margin: 10px 0;
+}
+
+.contest-create label {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.contest-create label .input-text {
+    margin: 0 15px;
+    height: 25px;
+}
+.contest-create label .input-text input {
+    text-align: center;
+}
+
+.contest-create section {
+    margin: 10px 0 10px 0;
+}
+
+.contest-create__action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contest-create__access {
+    display: grid;
+    width: 600px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.contest-create__access .input-radio {
+    margin: 0;
+}
+.contest-create__access .text {
+    font-size: 15px;
+    font-weight: 100;
+}
+.contest-create__access .input-radio-marker {
+    height: 19px;
+    width: 19px;
+}
+.contest-create__access div:nth-child(2) .input-radio-checked {
+    background: rgba(180, 180, 0, 0.8);
+    border: 1px solid rgb(180, 180, 0);
+}
+.contest-create__access div:nth-child(3) .input-radio-checked {
+    background: rgba(120, 0, 0, 0.8);
+    border: 1px solid rgb(120, 0, 0);
+}
+.contest-create__friends {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contest-create__friend {
+    display: flex;
+    flex-direction: row;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.contest-create__friend > div {
+    margin: 0;
+}
+.contest-create__friend input {
+    font-size: 13px;
+    font-weight: 100;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+.contest-create__friend .profile-small {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.contest-create p {
+    color: rgb(150, 150, 150);
+    margin: 0;
+}
+
