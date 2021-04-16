@@ -8,17 +8,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getContest } from '../../../store/actions/contest/getContest'
 import { startContest } from '../../../store/actions/contest/startContest'
 import { subscribeContest, unsubscribeContest } from '../../../store/actions/ws/contest'
+import { connectContest } from '../../../store/actions/contest/connectContest'
 
 import Loader from 'react-loader-spinner'
 import TextLink from '../../atoms/text/Link'
 import Task from '../../molecules/contest/Task'
-import Input from '../../atoms/input/Input'
 
+import Input from '../../atoms/input/Input'
 import 'codemirror/theme/material.css'
 import '../../../styles/organisms/contest/contest.css'
 
 const ContestTeam = ({ team, isAuthorized, contest }) => {
     const { name, members } = team
+    const dispatch = useDispatch()
     return (
         <div className={'contest__team'}>
             <div className={'contest__team__name'}> { name } </div>
@@ -34,7 +36,7 @@ const ContestTeam = ({ team, isAuthorized, contest }) => {
                                     ? '—'
                                     : (
                                         isAuthorized
-                                            ? <Input type={'button'} value={'Присоединиться'}/>
+                                            ? <Input type={'button'} value={'Присоединиться'} onClick={() => { dispatch(connectContest(contest._id)) }}/>
                                             : <p style={{ textAlign: 'center', fontSize: '15px', margin: 0 }}>
                                                 <TextLink to={'/auth/signin'} style={{ display: 'inline' }}>Войдите</TextLink> чтобы принять участие
                                             </p>

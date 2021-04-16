@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { connectSocket, disconnectSocket } from './store/actions/auth/socket'
+import { useDispatch, useSelector } from 'react-redux'
 import AuthPage from './pages/Auth'
 import IndexPage from './pages/Index'
 import ProfilePage from './pages/Profile'
@@ -16,6 +17,13 @@ import PackagePage from './pages/Package'
 
 const App = () => {
     const auth = useSelector(store => store.auth)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(connectSocket())
+        return () => {
+            dispatch(disconnectSocket())
+        }
+    }, [])
     return (
         <Router>
             <Switch>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
 
 import ProfilePersonal from '../../molecules/profile/large/Personal'
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { changeProfile } from '../../../store/actions/profile/changeProfile'
 import SmallProfile from '../../molecules/profile/small/Profile'

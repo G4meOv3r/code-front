@@ -106,13 +106,15 @@ const Task = ({ _id, name, task, packages }) => {
                                         <td> {stringDate} </td>
                                         <td> {compiler} </td>
                                         <td> {
-                                            score || <Loader
-                                                type="Oval"
-                                                color="rgb(90, 120, 170)"
-                                                height={15}
-                                                width={15}
-                                                style={{ alignSelf: 'center', justifySelf: 'center' }}
-                                            />
+                                            score !== null
+                                                ? score
+                                                : <Loader
+                                                    type="Oval"
+                                                    color="rgb(90, 120, 170)"
+                                                    height={15}
+                                                    width={15}
+                                                    style={{ alignSelf: 'center', justifySelf: 'center' }}
+                                                />
                                         } </td>
                                         <td> <TextLink to={`/package/${_id}`}> Подробнее </TextLink> </td>
                                     </tr>

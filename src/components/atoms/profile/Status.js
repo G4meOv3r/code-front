@@ -6,7 +6,7 @@ import '../../../styles/atoms/profile/status.css'
 function Status ({ value, className, ...otherProps }) {
     let message = ''
     if (value) {
-        message = `был в сети ${value} секунд назад`
+        message = 'не в сети'
     } else {
         message = 'в сети'
     }
