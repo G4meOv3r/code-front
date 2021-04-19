@@ -61,14 +61,13 @@ const PackagePage = () => {
                                     return accumulator + (test.status === 'OK' ? 1 : 0)
                                 }, 0) } </div>
                                 <div> <b>НЕ ПРОЙДЕНО:</b> { pkg.package.tests.reduce((accumulator, test) => {
-                                    return accumulator + (!test.status && test.status !== 'OK' ? 1 : 0)
+                                    return accumulator + (!test.status || test.status !== 'OK' ? 1 : 0)
                                 }, 0) } </div>
                                 <div className={'package__details__tests__decryption'} tabIndex={0}>
                                     <div> <b>OK</b> — Тест пройден</div>
                                     <div> <b>WA (Wrong Answer)</b> — Неверный ответ</div>
-                                    <div> <b>RE (RUNTIME ERROR)</b> — Ошибка во время выполнения программы</div>
                                     <div> <b>TL (TIME LIMIT)</b> — Программа завершена по ограничению времени</div>
-                                    <div> <b>CE (COMPILATION ERROR)</b> — Ошибка компиляции</div>
+                                    <div> <b>ER</b> — Ошибка во время выполнения программы или компиляции</div>
                                 </div>
                             </div>
                             <UnControlled

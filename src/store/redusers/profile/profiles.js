@@ -33,6 +33,18 @@ const profilesReducers = {
         state.profiles.isLoading = false
         state.profiles.errors = action.error
         return state
+    },
+    UPDATE_PROFILES: (state, action) => {
+        console.log('update')
+        const profileIndex = state.profiles.profiles.reduce((accumulator, profile, index) => {
+            return accumulator + (profile._id === action.data._id ? index + 1 : 0)
+        }, -1)
+        if (profileIndex !== -1) {
+            state.profiles.profiles[profileIndex] = action.data
+        } else {
+            state.profile.profiles = [action.data, ...state.profile.profiles]
+        }
+        return state
     }
 }
 export default profilesReducers

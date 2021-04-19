@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
+import { subscribeProfiles, unsubscribeProfiles } from '../store/actions/ws/profiles'
 import { getProfiles } from '../store/actions/profile/profiles'
 
 import Loader from 'react-loader-spinner'
 import TextLink from '../components/atoms/text/Link'
-import Input from '../components/atoms/input/Input'
 
+import Input from '../components/atoms/input/Input'
 import SmallProfile from '../components/molecules/profile/small/Profile'
 import '../styles/pages/profiles.css'
 
@@ -17,6 +18,12 @@ const ProfilesPage = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getProfiles())
+    }, [])
+    useEffect(() => {
+        dispatch(subscribeProfiles())
+        return () => {
+            dispatch(unsubscribeProfiles())
+        }
     }, [])
     return (
         <div className={'profiles-root'}>
@@ -45,7 +52,16 @@ const ProfilesPage = () => {
                         <Input type={'text'} placeholder={'Поиск'} value={request} onChange={(e) => { setRequest(e.target.value) }}/>
                         <section className={'profiles__content'}>
                             {
-                                profiles.map((profile, index) => {
+                                profiles.filter((profile) => {
+                                    return profile.status === 0
+                                }).map((profile, index) => {
+                                    return <SmallProfile key={index} {...profile}/>
+                                })
+                            }
+                            {
+                                profiles.filter((profile) => {
+                                    return profile.status === 1
+                                }).map((profile, index) => {
                                     return <SmallProfile key={index} {...profile}/>
                                 })
                             }

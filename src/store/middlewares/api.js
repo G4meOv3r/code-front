@@ -49,7 +49,6 @@ export const httpApi = store => next => action => {
             }
         })
         .catch(error => {
-            console.log('catch', error)
             next({
                 error: error,
                 type: action.type + '_FAIL',

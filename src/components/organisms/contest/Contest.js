@@ -102,15 +102,6 @@ const Contest = () => {
             ? <div className={'contest'}>
                 <div style={{ display: 'flex', marginTop: '10%', justifyContent: 'space-between' }}>
                     <TextLink to={'/contest'}> ← Контесты </TextLink>
-                    {
-                        contest.type === 'waiting'
-                            ? (
-                                ((contest.privacy.access === 0) || (contest.privacy.access === 1 && contest.isMember)) && (isAuthorized)
-                                    ? <TextLink to={`/contest/${contestId}/invite`}> Пригласить друга </TextLink>
-                                    : false
-                            )
-                            : false
-                    }
                 </div>
                 <section className={'contest__header'}>
                     <h1 style={{ display: 'inline' }}> {contest.name} </h1>

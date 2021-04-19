@@ -2,6 +2,8 @@ import { createReducer } from '@reduxjs/toolkit'
 import contestsReducers from './contests'
 import taskReducers from './task'
 import packageReducers from './package'
+import profilesReducers from './profiles'
+import searchReducers from './search'
 
 const initialState = {
     tasks: {
@@ -14,6 +16,8 @@ const initialState = {
 const wsReducer = createReducer(initialState, {
     ...contestsReducers,
     ...taskReducers,
-    ...packageReducers
+    ...packageReducers,
+    ...profilesReducers,
+    ...searchReducers
 })
 export default wsReducer
